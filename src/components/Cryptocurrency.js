@@ -1,1 +1,10 @@
-// This will be a stateless component that is solely responsible for rendering cryptocurrency information such as percentage changes and prices;
+import React, { Component } from 'react';
+import './Cryptocurrency.css';
+
+class Cryptocurrency extends Component {
+  render() {
+    
+  }
+}
+
+export default Cryptocurrency;
