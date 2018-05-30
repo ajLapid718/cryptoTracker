@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import '.Tickers.css';
+import './Tickers.css';
 
 class Tickers extends Component {
   constructor(props) {
+    super(props)
     this.state = {
       data: [
         {
@@ -35,7 +36,7 @@ class Tickers extends Component {
       </div>
     )
   }
-  
+
 }
 
 export default Tickers;
