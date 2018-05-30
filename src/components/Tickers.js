@@ -48,7 +48,7 @@ class Tickers extends Component {
     axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
     .then(response => {
       let targets = ["bitcoin", "ethereum", "litecoin"];
-      let result = response.data.filter(currency => wanted.includes(currency.id));
+      let result = response.data.filter(currency => targets.includes(currency.id));
       this.setState({data: result});
     })
     .catch(err => console.log(err));
