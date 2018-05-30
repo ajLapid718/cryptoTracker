@@ -39,6 +39,16 @@ class Tickers extends Component {
     }
   }
 
+  fetchCryptocurrencyData() {
+    axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
+    .then(response => {
+      let targets = ["bitcoin", "ethereum", "litecoin"];
+      let result = response.data.filter(currency => wanted.includes(currency.id));
+      this.setState({data: result});
+    })
+    .catch(err => console.log(err));
+  }
+
   render() {
     let tickers = this.state.data.map(currency =>
       <Cryptocurrency data={currency} key={currency.id} />
